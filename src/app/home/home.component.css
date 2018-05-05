@@ -1,0 +1,17 @@
+.card {
+    border-radius: 0px;
+    background: #4c7093;
+    border:0px;
+    margin-bottom:20px;
+}
+.card-header{
+    background: #036;
+    border:0px;
+    border-radius: 0px;
+}
+.list-group-item { margin-bottom:20px; border:0px; border-radius: 0px; background: #325b84}
+.form-control{
+    border:0px; border-radius: 0px;
+}
+.btn { border-radius: 0px;}
+.btn-success{ background: #a6f885; color:#000;}
