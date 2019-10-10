@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, style, transition, animate, keyframes, query, stagger} from '@angular/animations';
 import { DataService } from '../data.service';
+import { GoalService } from '../shared/goal.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
+  providers :[GoalService],
   animations: [
     trigger('goals',[
       transition('* => *', [
@@ -26,8 +28,6 @@ import { DataService } from '../data.service';
             style({opacity:0, transform: 'translateY(-75%)', offset: '1' })
           ]))
         ]), { optional:true})
-
-
       ])
     ])
   ]
@@ -35,18 +35,19 @@ import { DataService } from '../data.service';
 })
 export class HomeComponent implements OnInit {
 
-  itemCount: number = 5;
-  btnText: string = 'Add an item';
-  goalText: string = 'My first life goal';
+  itemCount: number;
+  btnText: string = 'Add your goal';
+  goalText: string = '';
 
   goals= [];
 
 
-  constructor( private _data: DataService) { }
+  constructor( private _data: DataService, goalService: GoalService) { }
+
+
 
   ngOnInit() {
     this.itemCount = this.goals.length;
-    console.log(this._data);
     this._data.goal.subscribe(res => this.goals = res);
     this._data.changeGoal(this.goals)
   }

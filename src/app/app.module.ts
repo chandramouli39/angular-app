@@ -8,7 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DataService } from './data.service';
-
+import { environment } from './../environments/environment';
 
 @NgModule({
   declarations: [

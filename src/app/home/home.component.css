@@ -13,5 +13,5 @@
 .form-control{
     border:0px; border-radius: 0px;
 }
-.btn { border-radius: 0px;}
+.btn { border-radius: 0px; width: 100%;}
 .btn-success{ background: #a6f885; color:#000;}
